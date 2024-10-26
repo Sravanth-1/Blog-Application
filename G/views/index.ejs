@@ -1,0 +1,37 @@
+<div class="author">
+    <h3 class="author__heading">Hi, I am Sravanth.</h3>
+    <p class="author__body" style="font-size: 0.9em;">
+      Please log in to the Admin section with the following credentials to explore personalized features within the blog application, Thanks
+      
+      Username: sravanth ||
+      Password: 1234.
+    </p>
+    
+  </div>
+  
+  <img src="/img/mainimage.webp" alt="person coding" class="hero-image" width="981" height="528">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  
+
+    <% if (nextPage !== null) { %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+  
+    
+  
+  
+  
+  </section>
